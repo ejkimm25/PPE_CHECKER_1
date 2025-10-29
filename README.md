@@ -243,7 +243,7 @@ func start
 
 ## 8. 시연 영상 (참고)
 
-## [▶ 시연 영상 바로보기](https://raw.githubusercontent.com/ejkimm25/ppe_check/main/assets/demo.mp4)
+[![시연 영상 보기](https://img.youtube.com/vi/i6wfnmtXG0o/0.jpg)](https://youtu.be/i6wfnmtXG0o)
 
 ## 9. 앞으로 하고 싶은 것
 
