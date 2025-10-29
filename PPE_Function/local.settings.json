@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+
+    "COMPUTER_VISION_ENDPOINT": "https://pro-ejkim-computervision.cognitiveservices.azure.com/",
+    "COMPUTER_VISION_KEY": "DJQAw6slugphal9Ynzgve5g3HUiHGc1oR2mWN3bDoKS4iTnKI7JqJQQJ99BJACqBBLyXJ3w3AAAFACOGH9CM",
+
+    "OPENAI_ENDPOINT": "https://pro-ejkim-openai.openai.azure.com/",
+    "OPENAI_KEY": "8Eq2udFn8FDYl5DzkawUGAID16lpDu1onltmdKQW27UG1IkGbGcGJQQJ99BJACLArgHXJ3w3AAABACOGqMUl",
+    "OPENAI_DEPLOYMENT": "gpt-4o"
+  }
+}
