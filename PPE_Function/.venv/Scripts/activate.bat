@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\EunJeong Kim\ppe_check\PPE_Function\.venv
+set VIRTUAL_ENV=C:\Users\EunJeongKim\ppe_check\PPE_Function\.venv
 
 if not defined PROMPT set PROMPT=$P$G
 
