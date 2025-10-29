@@ -243,9 +243,7 @@ func start
 
 ## 8. 시연 영상
 
-<video src="assets/ppe_demo.mp4" controls autoplay muted loop width="700">
-  브라우저가 video 태그를 지원하지 않습니다.
-</video>
+👉 [동영상 보기 (ppe_demo.mp4)](assets/ppe_demo.mp4)
 
 ---
 
