@@ -91,8 +91,6 @@ ppe_check/
   - `st.session_state`로 분석 상태 유지
   - 사용자 경험 중심의 인터랙티브 구성
 
----
-
 ### 2️⃣ **PPE_Function/** _(백엔드 / Azure Function)_
 
 - **서버리스 백엔드 로직**
@@ -109,8 +107,6 @@ ppe_check/
   - 요청 파라미터 검증
   - Azure OpenAI API 호출 및 결과 파싱
   - HTTP Trigger 기반 함수 실행
-
----
 
 ### 3️⃣ **requirements.txt (의존성 목록)**
 
@@ -130,8 +126,6 @@ ppe_check/
   pip install -r requirements.txt
   ```
 
----
-
 ### 4️⃣ **startup.txt (실행 스크립트)**
 
 - Azure Web App에서 Streamlit과 Azure Function을 동시에 실행하도록 설정
@@ -141,8 +135,6 @@ ppe_check/
   ```
 
 - Web App 시작 시 자동 실행되도록 구성
-
----
 
 ### 5️⃣ **.gitignore**
 
@@ -158,15 +150,11 @@ ppe_check/
 
 - `.venv`와 설정 파일은 깃허브 업로드 시 자동 무시
 
----
-
 ### 6️⃣ **README.md (프로젝트 문서)**
 
 - 프로젝트 개요, 아키텍처, 실행 방법, 향후 개선 방향 정리
 - 깃허브 첫 화면에서 프로젝트 설명 제공
 - 포트폴리오 및 발표 자료로도 활용 가능
-
----
 
 ## 🔑 파일별 역할에 따른 핵심 기술 포인트
 
@@ -177,5 +165,58 @@ ppe_check/
 | ☁️ **Azure Functions 연동**        | Streamlit과 OpenAI API를 연결하는 서버리스 백엔드 구성              |
 | 🧩 **간결한 구조**                 | `app.py`(UI) + `PPE_Function`(AI 백엔드) 로 역할 분리               |
 | ⚙️ **확장성 고려된 설계**          | 이미지 분석, 텍스트 상담, 클라우드 배포를 손쉽게 확장 가능          |
+
+---
+
+## 6. 실행 방법
+
+### 1️⃣ 저장소 클론 & 진입
+
+```bash
+git clone https://github.com/ejkimm25/ppe_check.git
+cd ppe_check
+```
+
+### 2️⃣ 가상환경 생성 및 패키지 설치
+
+```bash
+python -m venv .venv
+.\.venv\Scripts\activate     # (Windows PowerShell)
+pip install -r requirements.txt
+```
+
+### 3️⃣ 로컬 환경 설정 (선택)
+
+- Azure Functions 실행 시 local.settings.json을 사용할 수 있음
+- Streamlit만 사용할 경우 추가 환경 설정은 필요 없음
+- (만약 Azure OpenAI API를 직접 연결할 경우)
+
+```bash
+AZURE_OPENAI_ENDPOINT=https://<your-resource>.openai.azure.com/
+AZURE_OPENAI_API_KEY=your_api_key_here
+AZURE_OPENAI_DEPLOYMENT=gpt-4o
+```
+
+### 4️⃣ 앱 실행
+
+- Streamlit 실행
+
+```bash
+streamlit run app.py
+```
+
+→ 실행 후 브라우저에서 http://localhost:8501 접속
+
+- Azure Functions 실행 (선택)
+
+```bash
+func start
+```
+
+→ 로컬 백엔드 테스트용 (http://localhost:7071)
+
+⚡ TIP:
+Streamlit은 프론트(UI) 역할, Azure Function은 백엔드 역할로 동작합니다.
+두 프로세스를 동시에 실행하면 완전한 로컬 테스트 환경이 구성됩니다.
 
 ---
