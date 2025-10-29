@@ -73,98 +73,60 @@ ppe_check/
 
 ## 5. 파일별 담당 역할
 
-1️⃣ app.py (프론트엔드/UI)
+### 1️⃣ **app.py (프론트엔드/UI)**
 
-Streamlit 기반 웹 UI
+- **Streamlit 기반 웹 UI**
 
-사용자가 이미지 업로드 또는 질문 입력
+  - 사용자가 **이미지 업로드** 또는 **질문 입력**
+  - 버튼 클릭으로 기능 실행:  
+    📸 **PPE 착용 분석**, 💬 **AI 상담 시작**
 
-버튼 클릭으로 기능 실행:
-📸 PPE 착용 분석, 💬 AI 상담 시작
+- **UI 구성 요소**
 
-UI 구성 요소
+  - 파일 업로더, 텍스트 입력창, 실행 버튼, 결과 출력 영역
+  - 결과창에 **PPE 누락 항목**, **AI 응답 텍스트** 표시
 
-파일 업로더, 텍스트 입력창, 실행 버튼, 결과 출력 영역
+- **UX 기능**
+  - `st.spinner()` 로딩 표시
+  - `st.session_state`로 분석 상태 유지
+  - 사용자 경험 중심의 인터랙티브 구성
 
-결과창에 PPE 누락 항목, AI 응답 텍스트 표시
+---
 
-UX 기능
+### 2️⃣ **PPE_Function/** _(백엔드 / Azure Function)_
 
-st.spinner() 로딩 표시
+- **서버리스 백엔드 로직**
 
-st.session_state로 분석 상태 유지
+  - Streamlit에서 받은 입력을 처리하고, Azure OpenAI로 전달
+  - 결과를 JSON 형태로 반환해 Streamlit이 표시 가능하게 함
 
-사용자 경험 중심의 인터랙티브 구성
+- **구조**
 
-2️⃣ PPE_Function/ (백엔드 / Azure Function)
+  - `ppe_check/` → 이미지 분석 함수 (AI 모델 호출)
+  - `ppe_chat/` → 대화형 상담 함수 (GPT-4o 응답 생성)
 
-서버리스 백엔드 로직
+- **핵심 역할**
+  - 요청 파라미터 검증
+  - Azure OpenAI API 호출 및 결과 파싱
+  - HTTP Trigger 기반 함수 실행
 
-Streamlit에서 받은 입력을 처리하고, Azure OpenAI로 전달
+---
 
-결과를 JSON 형태로 반환해 Streamlit이 표시 가능하게 함
+### 3️⃣ **requirements.txt (의존성 목록)**
 
-구조
+- 프로젝트 실행에 필요한 패키지 모음
 
-ppe_check/ → 이미지 분석 함수 (AI 모델 호출)
+  ```bash
+  streamlit
+  azure-functions
+  requests
+  openai
+  pillow
 
-ppe_chat/ → 대화형 상담 함수 (GPT-4o 응답 생성)
+  ```
 
-핵심 역할
-
-요청 파라미터 검증
-
-Azure OpenAI API 호출 및 결과 파싱
-
-HTTP Trigger 기반 함수 실행
-
-3️⃣ requirements.txt (의존성 목록)
-
-프로젝트 실행에 필요한 패키지 모음
-
-streamlit
-azure-functions
-requests
-openai
-pillow
-
-한 줄 설치
+- 한 줄 설치
 
 pip install -r requirements.txt
 
-4️⃣ startup.txt (실행 스크립트)
-
-Azure Web App에서 Streamlit과 Azure Function을 동시에 실행하도록 설정
-
-예시 내용
-
-python -m streamlit run app.py --server.port=8000
-
-Web App 시작 시 자동 실행되도록 구성
-
-5️⃣ .gitignore
-
-민감정보 및 불필요한 캐시 제외
-
-.venv/
-.vscode/
-**pycache**/
-local.settings.json
-
-.venv와 설정 파일은 깃허브 업로드 시 자동 무시
-
-6️⃣ README.md (프로젝트 문서)
-
-프로젝트 개요, 아키텍처, 실행 방법, 향후 개선 방향 정리
-
-깃허브 첫 화면에서 프로젝트 설명 제공
-
-포트폴리오 및 발표 자료로도 활용 가능
-
-🔑 파일별 역할에 따른 핵심 기술 포인트
-기능 설명
-🧤 이미지 업로드 기반 PPE 감지 Streamlit에서 이미지 업로드 → Azure Function → AI 분석 후 결과 표시
-💬 대화형 AI 상담 (GPT-4o) 사용자의 질문을 GPT-4o에 전달해 실시간 답변 생성
-☁️ Azure Functions 연동 Streamlit과 OpenAI API를 연결하는 서버리스 백엔드 구성
-🧩 간결한 구조 app.py (UI) + PPE_Function (AI 백엔드) 로 역할 분리
-⚙️ 확장성 고려된 설계 이미지 분석, 텍스트 상담, 클라우드 배포를 손쉽게 확장 가능
+---
