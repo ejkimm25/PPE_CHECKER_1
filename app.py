@@ -10,7 +10,7 @@ st.set_page_config(page_title="👷 AI 기반 PPE 감지 & 대화", layout="cent
 st.title("👷 AI 기반 PPE 감지 시스템")
 st.write(
     """
-이 도구는 **산업현장 근로자의 안전 장비(PPE)** 착용 여부를 AI로 분석합니다.  
+이 시스템은 **산업현장 근로자의 안전 장비(PPE)** 착용 여부를 AI로 분석합니다.  
 또한 아래에서 **PPE 관련 질문을 직접 입력**하면 AI가 대화형으로 답변해드립니다.
 """
 )
