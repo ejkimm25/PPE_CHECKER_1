@@ -215,8 +215,9 @@ func start
 
 → 로컬 백엔드 테스트용 (http://localhost:7071)
 
-⚡ TIP:
-Streamlit은 프론트(UI) 역할, Azure Function은 백엔드 역할로 동작합니다.
-두 프로세스를 동시에 실행하면 완전한 로컬 테스트 환경이 구성됩니다.
+> ⚡ **TIP:**  
+> Streamlit은 **프론트(UI)** 역할,  
+> Azure Function은 **백엔드** 역할로 동작합니다.  
+> 두 프로세스를 동시에 실행하면 **완전한 로컬 테스트 환경**이 구성됩니다.
 
 ---
