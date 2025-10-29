@@ -126,7 +126,56 @@ ppe_check/
   ```
 
 - 한 줄 설치
+  ```bash
+  pip install -r requirements.txt
+  ```
 
-pip install -r requirements.txt
+---
+
+### 4️⃣ **startup.txt (실행 스크립트)**
+
+- Azure Web App에서 Streamlit과 Azure Function을 동시에 실행하도록 설정
+
+  ```bash
+  python -m streamlit run app.py --server.port=8000
+  ```
+
+- Web App 시작 시 자동 실행되도록 구성
+
+---
+
+### 5️⃣ **.gitignore**
+
+- Azure Web App에서 Streamlit과 Azure Function을 동시에 실행하도록 설정
+
+  ```bash
+  .venv/
+  .vscode/
+  __pycache__/
+  local.settings.json
+
+  ```
+
+- `.venv`와 설정 파일은 깃허브 업로드 시 자동 무시
+
+---
+
+### 6️⃣ **README.md (프로젝트 문서)**
+
+- 프로젝트 개요, 아키텍처, 실행 방법, 향후 개선 방향 정리
+- 깃허브 첫 화면에서 프로젝트 설명 제공
+- 포트폴리오 및 발표 자료로도 활용 가능
+
+---
+
+## 🔑 파일별 역할에 따른 핵심 기술 포인트
+
+| 기능                               | 설명                                                                |
+| :--------------------------------- | :------------------------------------------------------------------ |
+| 🧤 **이미지 업로드 기반 PPE 감지** | Streamlit에서 이미지 업로드 → Azure Function → AI 분석 후 결과 표시 |
+| 💬 **대화형 AI 상담 (GPT-4o)**     | 사용자의 질문을 GPT-4o에 전달해 실시간 답변 생성                    |
+| ☁️ **Azure Functions 연동**        | Streamlit과 OpenAI API를 연결하는 서버리스 백엔드 구성              |
+| 🧩 **간결한 구조**                 | `app.py`(UI) + `PPE_Function`(AI 백엔드) 로 역할 분리               |
+| ⚙️ **확장성 고려된 설계**          | 이미지 분석, 텍스트 상담, 클라우드 배포를 손쉽게 확장 가능          |
 
 ---
