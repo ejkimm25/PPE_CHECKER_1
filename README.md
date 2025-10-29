@@ -44,7 +44,8 @@ ppe_check/
 ├── .gitignore                    # 민감정보/캐시 제외 설정
 ├── app.py                        # Streamlit 메인 UI
 ├── requirements.txt              # 의존성 목록(필요한 패키지 목록)
-├── startup.txt                   # Azure 실행 스크립트
+├── startup.sh                    # Azure 실행 스크립트
+├── runtime.txt                   # python runtime 버전 설정
 └── README.md                     # 프로젝트 설명 파일
 
 ```
