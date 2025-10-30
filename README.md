@@ -229,6 +229,8 @@ func start
 
 ## 7. 라이브 데모
 
+- **접근 url : https://pro-ejkim-webapp100.azurewebsites.net/**
+
 - **이미지 업로드 기능**  
   사용자가 작업자 이미지를 업로드하면  
   AI가 자동으로 **PPE(보호장비) 착용 여부를 분석**하고 누락된 항목을 시각적으로 표시합니다.
