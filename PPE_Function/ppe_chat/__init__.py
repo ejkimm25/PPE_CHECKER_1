@@ -24,6 +24,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         resp = requests.post(url, headers=headers, json=data)
         reply = resp.json()["choices"][0]["message"]["content"]
 
-        return func.HttpResponse(json.dumps({"reply": reply}, ensure_ascii=False), mimetype="application/json")
+        return func.HttpResponse(json.dumps({"reply": reply}, ensure_ascii=False).encode("utf-8"), mimetype="application/json",charset="utf-8")
     except Exception as e:
         return func.HttpResponse(json.dumps({"error": str(e)}), status_code=500)
+
