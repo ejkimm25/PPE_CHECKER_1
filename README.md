@@ -44,7 +44,7 @@ ppe_check/
 ├── .gitignore                    # 민감정보/캐시 제외 설정
 ├── app.py                        # Streamlit 메인 UI
 ├── requirements.txt              # 의존성 목록(필요한 패키지 목록)
-├── startup.sh                    # Azure 실행 스크립트
+├── streamlit.sh                  # Azure 실행 스크립트
 ├── runtime.txt                   # python runtime 버전 설정
 └── README.md                     # 프로젝트 설명 파일
 
@@ -135,11 +135,12 @@ ppe_check/
   pip install -r requirements.txt
   ```
 
-### 4️⃣ **startup.txt (실행 스크립트)**
+### 4️⃣ **streamlit.txt (실행 스크립트)**
 
-- Azure Web App에서 Streamlit과 Azure Function을 동시에 실행하도록 설정
+- Azure Web App에서 Streamlit을 실행하도록 설정
 
   ```bash
+  pip install streamlit
   python -m streamlit run app.py --server.port=8000
   ```
 
