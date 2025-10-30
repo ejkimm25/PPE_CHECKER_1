@@ -135,7 +135,7 @@ ppe_check/
   pip install -r requirements.txt
   ```
 
-### 4️⃣ **streamlit.txt (실행 스크립트)**
+### 4️⃣ **streamlit.sh (실행 스크립트)**
 
 - Azure Web App에서 Streamlit을 실행하도록 설정
 
